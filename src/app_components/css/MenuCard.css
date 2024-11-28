@@ -1,0 +1,14 @@
+.card-footer {
+    width: 50%;
+    padding-left: 4px;
+}
+
+.card-footer:hover {
+    cursor: pointer;
+    border-radius: 16px;
+    background-color: azure;
+}
+
+.card-footer:active {
+    background-color: rgb(175, 189, 189);
+}

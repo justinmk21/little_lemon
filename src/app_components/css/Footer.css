@@ -1,0 +1,10 @@
+footer {
+    background-color: darkgreen;
+    margin: 0;
+    padding: 36px 0;
+    color: antiquewhite;
+}
+
+.footer table td {
+    padding: 10px 50px;
+}

@@ -1,0 +1,23 @@
+nav ul li {
+    display: inline;
+    padding: 9px 15px;
+    margin: 0 10px;
+    border-radius: 8px;
+    background-color: rgb(186, 249, 249);
+}
+nav ul li:hover {
+    cursor: pointer;
+    background-color: rgb(97, 156, 156);
+}
+
+.link:hover {
+    border-bottom: 1px solid azure;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+}
+.icon {
+    width: 20%;
+}
