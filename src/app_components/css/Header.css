@@ -14,10 +14,7 @@ nav ul li:hover {
     border-bottom: 1px solid azure;
 }
 
-.logo {
-    display: flex;
-    flex-direction: row;
-}
 .icon {
     width: 20%;
+    height: auto;
 }

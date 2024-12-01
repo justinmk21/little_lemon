@@ -1,17 +1,14 @@
-import { LuLeaf } from "react-icons/lu"
-import { Text, Flex} from "@chakra-ui/react"
+import { Flex, Image } from "@chakra-ui/react"
 import { NavLink } from 'react-router-dom'
+import Logo from './images/LittleLemonLogo.jpg'
 import './css/Header.css'
 
 function Header() {
 
     return (
         <>
-        <Flex justifyContent={'space-between'} padding={'0 300px'} margin={'20px 0'}>
-            <div className="logo">
-                <div className="icon"><LuLeaf size={'20'}/></div>
-                <div className="little-logo"><Text>LittleLemon</Text></div>
-            </div>
+        <Flex justifyContent={'space-between'} padding={'0 300px'} margin={'20px 0'} alignItems={'center'}>
+            <div className="icon"><Image src={Logo}/></div>
             <nav>
                 <ul>
                     <li><NavLink to={'/'} className="link" >Home</NavLink></li>

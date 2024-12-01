@@ -1,9 +1,16 @@
 import { Heading, Image, Text, Flex, Box } from "@chakra-ui/react"
-import Food from './images/restauranfood.jpg'
+import FoodChef from './images/FoodChef.jpg'
 import Button from "./Button"
+import { useNavigate } from "react-router-dom"
 
 
 function LandingPage() {
+
+    const navToBooking = useNavigate();
+
+    const handleClick = () => {
+        navToBooking('/booking')
+    }
 
     return (
         <>
@@ -15,10 +22,12 @@ function LandingPage() {
                     We are a family owned Maditerranean restaurant, focused on
                     traditional recipes served with a modern twist.
                 </Text>
-                <Button value={'Reserve a Table'}/>
+                <Button onClick={handleClick} value={'Reserve a Table'}/>
             </Box>
         </Flex>
-        <Image src={Food} width={'330px'} height={'320px'} borderRadius={'16px'}/>
+        <Image src={FoodChef} width={{ base: "130px", md: "260px", lg: "330px" }}
+        height={'320px'} alt="Chef with food" loading="lazy"
+        borderRadius={'16px'}/>
         </>
     )
 }

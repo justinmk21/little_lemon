@@ -9,7 +9,7 @@ import './css/MenuCard.css'
 function MenuCard(props) {
 
     return (
-        <CardRoot maxWidth={'320px'} minHeight={'400px'}
+        <CardRoot maxWidth={'320px'} Height={'400px'}
         borderRadius={'16px'} margin={'20px auto'}>
             <Image src={props.img}  height={'200px'}
                 borderTopRadius={'10px'}/>

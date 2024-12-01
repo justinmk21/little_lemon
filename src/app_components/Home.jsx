@@ -2,14 +2,15 @@ import { Flex, Grid, Heading } from "@chakra-ui/react"
 import LandingPage from "./Landing_Page"
 import MenuCard from "./Menu_Card"
 import Button from "./Button"
-import foodImg from './images/greek salad.jpg'
+import GreekSalad from './images/GreekSalad(H).jpg'
 import lemonDessert from './images/lemon dessert.jpg'
+import Bruchetta from './images/Bruchetta(H).jpg'
 import { useNavigate } from "react-router-dom"
 
 
 const foodMenu = [
     {
-        foodImage: foodImg,
+        foodImage: GreekSalad,
         item: 'Greek Salad',
         price: "12.99",
         description: 'The famous greek salad of crispy of lettuce, peppers, \
@@ -17,7 +18,7 @@ const foodMenu = [
                       crunchygarlic and rosemary croutons.',
     },
     {
-        foodImage: foodImg,
+        foodImage: Bruchetta,
         item: 'Bruchetta',
         price: "5.00",
         description: 'Our Bruchetta is made from grilled bread that has been \
@@ -49,16 +50,20 @@ function Home() {
             >
                 <LandingPage/>
             </Flex>
-            <Flex flexDirection={'column'} margin={'0 300px'}>
+            <Flex flexDirection={'column'}
+            m={{ base: "0 30px", md: "0 150px", lg: "0 300px" }}
+            >
                 <article>
                     <Flex justifyContent={'space-between'} margin={'32px 0'}>
                         <Heading size={'2xl'}>This Week&apos;s Specials!</Heading>
-                        <Button onClick={handleButtonClick} value={'Online Menu'}>Online Menu</Button>
+                        <Button onClick={handleButtonClick} value={'Online Menu'}>
+                            Online Menu
+                        </Button>
                     </Flex>
                     <Grid
-                    gridTemplateColumns={"repeat(3,minmax(0,1fr))"}
-                    gridGap={10}
-                    justifyContent={'space-between'}
+                    templateColumns={{ base:"repeat(1, 1fr)", md:"repeat(2, 1fr)"
+                        , lg:"repeat(3, 1fr)" }}
+                    gridGap={2}
                     >
                         {foodMenu.map((food, i) => (
                             <MenuCard
@@ -70,7 +75,7 @@ function Home() {
                             />
                         ))}
                     </Grid>
-            </article>
+                </article>
             </Flex>
         </main>
     )

@@ -1,0 +1,23 @@
+.forms {
+    display: grid;
+    border: 1px solid pink;
+    width: 40%;
+    margin: 60px auto;
+    padding: 32px;
+}
+
+.forms input {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 4px 0;
+}
+
+.forms select {
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 4px 0;
+}
+
+.forms label {
+    margin: 4px 0;
+}
