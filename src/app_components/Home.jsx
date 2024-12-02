@@ -6,6 +6,7 @@ import GreekSalad from './images/GreekSalad(H).jpg'
 import lemonDessert from './images/lemon dessert.jpg'
 import Bruchetta from './images/Bruchetta(H).jpg'
 import { useNavigate } from "react-router-dom"
+import Testimony from "./Testimonials"
 
 
 const foodMenu = [
@@ -44,38 +45,62 @@ function Home() {
 
     return (
         <main>
-            <Flex justifyContent={'space-between'} backgroundColor={'#495E57'}
-            minHeight={'220px'}
-            padding={'32px 300px'}
-            >
+            <Flex
+                justifyContent={'space-between'}
+                backgroundColor={'#495E57'}
+                minHeight={'220px'}
+                padding={'32px 300px'}
+                >
                 <LandingPage/>
             </Flex>
-            <Flex flexDirection={'column'}
-            m={{ base: "0 30px", md: "0 150px", lg: "0 300px" }}
-            >
+            <Flex  border={'2px solid'}
+                flexDirection={'column'}
+                >
                 <article>
-                    <Flex justifyContent={'space-between'} margin={'32px 0'}>
-                        <Heading size={'2xl'}>This Week&apos;s Specials!</Heading>
-                        <Button onClick={handleButtonClick} value={'Online Menu'}>
+                    <Flex
+                        justifyContent={'center'}
+                        alignItems={'center'}
+                        margin={'32px 0'}
+                        gap={80}
+                        >
+                        <Heading size={'2xl'}>
+                            This Week&apos;s Specials!
+                        </Heading>
+                        <Button
+                            onClick={handleButtonClick}
+                            value={'Online Menu'}
+                            >
                             Online Menu
                         </Button>
                     </Flex>
-                    <Grid
-                    templateColumns={{ base:"repeat(1, 1fr)", md:"repeat(2, 1fr)"
-                        , lg:"repeat(3, 1fr)" }}
-                    gridGap={2}
-                    >
-                        {foodMenu.map((food, i) => (
-                            <MenuCard
-                            key={i}
-                            item={food.item}
-                            price={food.price}
-                            img={food.foodImage}
-                            description={food.description}
-                            />
-                        ))}
-                    </Grid>
+                    <Flex
+                        justifyContent={'center'}
+                        >
+                        <Grid
+                            templateColumns={{
+                            base:"repeat(1, 1fr)",
+                            md:"repeat(2, 1fr)",
+                            lg:"repeat(3, 1fr)"
+                            }}
+                            gridGap={12}
+                            >
+                            {foodMenu.map((food, i) => (
+                                <MenuCard
+                                key={i}
+                                item={food.item}
+                                price={food.price}
+                                img={food.foodImage}
+                                description={food.description}
+                                />
+                            ))}
+                        </Grid>
+                    </Flex>
                 </article>
+                <Flex
+                    justifyContent={'center'}
+                    >
+                    <Testimony/>
+                </Flex>
             </Flex>
         </main>
     )

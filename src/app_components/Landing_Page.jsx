@@ -25,9 +25,12 @@ function LandingPage() {
                 <Button onClick={handleClick} value={'Reserve a Table'}/>
             </Box>
         </Flex>
-        <Image src={FoodChef} width={{ base: "130px", md: "260px", lg: "330px" }}
-        height={'320px'} alt="Chef with food" loading="lazy"
-        borderRadius={'16px'}/>
+        <Image
+            src={FoodChef}
+            width={{ base: "130px", md: "260px", lg: "330px" }}
+            height={'320px'} alt="Chef with food" loading="lazy"
+            borderRadius={'16px'}
+            />
         </>
     )
 }

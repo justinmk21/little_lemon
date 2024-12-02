@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Button from "./Button";
 import './css/BookingForm.css';
@@ -8,6 +9,7 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
     const [time, setTime] = useState('');
     const [guests, setGuests] = useState('');
     const [occasion, setOccasion] = useState('');
+    const [seats, setSeats] = useState('');
 
     const occasions = ['Birthday', 'Anniversary', 'Engagement'];
 
@@ -18,12 +20,49 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        const formData = { date, time, guests, occasion };
+        const formData = { date, time, guests, occasion, seats };
         submitForm(formData);
     };
 
     return (
-        <form className="forms" onSubmit={handleFormSubmit}>
+        <form className="form" onSubmit={handleFormSubmit}>
+            <Flex
+                justifyContent={'space-between'}
+                alignItems={'center'}
+                gap={'2'}
+                >
+                <label htmlFor="seats">Seating:</label>
+                <Flex
+                    alignItems={'center'}
+                    gap={'2'}
+                    >
+                    <Text>Outdoor</Text>
+                    <input
+                        style={{ width: '16px' }}
+                        value={'outdoor'}
+                        checked={seats === 'outdoor'}
+                        type="radio"
+                        id="seats"
+                        onChange={(e) => setSeats(e.target.value)}
+                        required
+                    />
+                </Flex>
+                <Flex
+                    alignItems={'center'}
+                    gap={'2'}
+                    >
+                    <Text>Indoor</Text>
+                    <input
+                        style={{ width: '16px' }}
+                        value={'indoor'}
+                        checked={seats === 'indoor'}
+                        type="radio"
+                        id="seats"
+                        onChange={(e) => setSeats(e.target.value)}
+                        required
+                    />
+                </Flex>
+            </Flex>
             <label htmlFor="res-date">Choose Date</label>
             <input
                 value={date}
@@ -43,7 +82,7 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
             >
                 <option value="">Select Time</option>
                 {availableTimes.map((time, index) => (
-                    <option key={index} value={time}>{time}</option>
+                    <option className="dropdown" key={index} value={time}>{time}</option>
                 ))}
             </select>
 
@@ -68,14 +107,14 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
             >
                 <option value="">Occasion</option>
                 {occasions.map((oc, i) => (
-                    <option key={i} value={oc}>{oc}</option>
+                    <option className="dropdown" key={i} value={oc}>{oc}</option>
                 ))}
             </select>
 
             <Button
                 type="submit"
                 value="Make Your Reservations"
-                disabled={!date || !time || !guests || !occasion}
+                disabled={!date || !time || !guests || !occasion || !seats}
             />
         </form>
     );

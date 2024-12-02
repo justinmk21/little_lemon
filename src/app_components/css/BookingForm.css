@@ -1,23 +1,55 @@
-.forms {
+form {
+    color: #495E57;
+    border-radius: 8px;
+    border: 1px solid #EDEFEE;
+    box-shadow: 6px 6px 12px rgba(237, 239, 238, 0.3);
+}
+
+.form {
     display: grid;
-    border: 1px solid pink;
+    justify-content: center;
     width: 40%;
     margin: 60px auto;
     padding: 32px;
 }
 
-.forms input {
-    border: 1px solid;
-    border-radius: 4px;
+.form input {
+    text-align: center;
+    border-radius: 8px;
     padding: 4px 0;
+    height: 40px;
+    width: 400px;
+    background-color: #EDEFEE;
 }
 
-.forms select {
-    border: 1px solid;
-    border-radius: 4px;
-    padding: 4px 0;
+.form select {
+    text-align: center;
+    border-radius: 8px;
+    padding: 4px 6px;
+    height: 40px;
+    width: 400px;
+    background-color: #EDEFEE;
+}
+.form select:focus {
+    border: none;
 }
 
-.forms label {
+.form label {
     margin: 4px 0;
+}
+
+.dropdown {
+    border-radius: 8px;
+    padding: 4px 0;
+    height: 40px;
+    width: 400px;
+    background-color: #EDEFEE;
+}
+
+.dropdown:focus {
+    border: none;
+}
+
+.dropdown::selection {
+    border: none;
 }
