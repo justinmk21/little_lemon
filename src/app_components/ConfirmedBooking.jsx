@@ -24,9 +24,9 @@ function ConfirmedBooking(){
                 >
                 <LuArrowBigLeft/>
                 <Link
-                    to={'/booking'}
+                    to={'/'}
                     >
-                    Back
+                    Home
                 </Link>
             </Flex>
         </Container>

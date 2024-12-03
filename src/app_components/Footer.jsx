@@ -1,42 +1,18 @@
-import { Flex, Text, Link, Image, Box } from "@chakra-ui/react"
+import { Flex, Text, Link } from "@chakra-ui/react"
 import { LuPhoneIncoming, LuMail,LuLocateOff } from "react-icons/lu"
 import { LuFacebook, LuInstagram, LuYoutube } from "react-icons/lu"
-import Logo from './images/LittleLemonLogo.jpg'
 import './css/Footer.css'
 
 function Footer() {
 
     return (
         <footer>
-            <Flex justifyContent={'space-between'} margin={'0 360px'}
-            className="footer">
-                <Box width={'20%'}>
-                    <Image src={Logo} color={'white'}/>
-                </Box>
+            <Flex
+                className="footer"
+                justifyContent={'center'}
+                >
                 <table>
-                    <td>
-                        <tr>
-                            <Link padding={'6px 0'} color={'silver'} href="/">
-                                About
-                            </Link>
-                        </tr>
-                        <tr>
-                            <Link padding={'6px 0'} color={'silver'} href="/">
-                                Menu
-                            </Link>
-                        </tr>
-                        <tr>
-                            <Link padding={'6px 0'} color={'silver'} href="/">
-                                Reservations
-                            </Link>
-                        </tr>
-                        <tr>
-                            <Link padding={'6px 0'} color={'silver'} href="/">
-                                Order Online
-                            </Link>
-                        </tr>
-                    </td>
-                    <td>
+                    <td className="data-2">
                         <tr>
                             <Flex alignItems={'center'} gap={2} padding={'6px 0'}>
                                 <LuPhoneIncoming/>
@@ -56,7 +32,7 @@ function Footer() {
                             </Flex>
                         </tr>
                     </td>
-                    <td>
+                    <td className="data-table-b">
                         <tr>
                             <Flex alignItems={'center'} gap={2} padding={'6px 0'}>
                                 <LuFacebook/>

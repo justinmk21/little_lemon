@@ -1,15 +1,24 @@
 import { Flex, Image } from "@chakra-ui/react"
 import { NavLink } from 'react-router-dom'
 import Logo from './images/LittleLemonLogo.jpg'
+import { LuMenu } from "react-icons/lu"
 import './css/Header.css'
 
 function Header() {
 
     return (
         <>
-        <Flex justifyContent={'space-between'} padding={'0 300px'} margin={'20px 0'} alignItems={'center'}>
+        <Flex
+            className="header"
+            justifyContent={'space-between'}
+            alignItems={'center'}
+            >
             <div className="icon"><Image src={Logo}/></div>
-            <nav>
+            <LuMenu
+                className="menu"
+                size={'40'}
+                />
+            <nav className="nav-list">
                 <ul>
                     <li><NavLink to={'/'} className="link" >Home</NavLink></li>
                     <li><NavLink to={'/menu'} className="link" >Menu</NavLink></li>

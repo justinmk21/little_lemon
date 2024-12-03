@@ -3,14 +3,14 @@ form {
     border-radius: 8px;
     border: 1px solid #EDEFEE;
     box-shadow: 6px 6px 12px rgba(237, 239, 238, 0.3);
+    max-width: 600px;
 }
 
 .form {
     display: grid;
     justify-content: center;
-    width: 40%;
     margin: 60px auto;
-    padding: 32px;
+    padding: 38px;
 }
 
 .form input {
@@ -30,9 +30,6 @@ form {
     width: 400px;
     background-color: #EDEFEE;
 }
-.form select:focus {
-    border: none;
-}
 
 .form label {
     margin: 4px 0;
@@ -46,10 +43,40 @@ form {
     background-color: #EDEFEE;
 }
 
-.dropdown:focus {
-    border: none;
+
+
+@media (min-width:600px) {
+    .form {
+        width: 500px;
+        margin: 60px auto;
+        padding: 32px 34px;
+    }
+
+    .form input {
+        width: 400px;
+    }
+
+    .form select {
+        width: 400px;
+    }
+    }
+
+@media (min-width: 360px) and (max-width: 480px) {
+    .form input {
+        width: 300px;
+    }
+
+    .form select {
+        width: 300px;
+    }
 }
 
-.dropdown::selection {
-    border: none;
+@media (min-width: 340px) and (max-width: 360px){
+    .form input {
+        width: 260px;
+    }
+
+    .form select {
+        width: 260px;
+    }
 }

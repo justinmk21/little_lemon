@@ -1,4 +1,4 @@
-import { Flex, Grid, Heading } from "@chakra-ui/react"
+import { Box, Flex, Grid, Heading } from "@chakra-ui/react"
 import LandingPage from "./Landing_Page"
 import MenuCard from "./Menu_Card"
 import Button from "./Button"
@@ -7,6 +7,7 @@ import lemonDessert from './images/lemon dessert.jpg'
 import Bruchetta from './images/Bruchetta(H).jpg'
 import { useNavigate } from "react-router-dom"
 import Testimony from "./Testimonials"
+import './css/LandingPage.css'
 
 
 const foodMenu = [
@@ -45,25 +46,26 @@ function Home() {
 
     return (
         <main>
-            <Flex
-                justifyContent={'space-between'}
+            <Box
                 backgroundColor={'#495E57'}
                 minHeight={'220px'}
-                padding={'32px 300px'}
+                alignItems={'center'}
                 >
                 <LandingPage/>
-            </Flex>
-            <Flex  border={'2px solid'}
+            </Box>
+            <Flex
                 flexDirection={'column'}
                 >
                 <article>
                     <Flex
-                        justifyContent={'center'}
+                        justifyContent={'space-around'}
                         alignItems={'center'}
                         margin={'32px 0'}
-                        gap={80}
+                        gap={2}
                         >
-                        <Heading size={'2xl'}>
+                        <Heading
+                            size={'2xl'}
+                            >
                             This Week&apos;s Specials!
                         </Heading>
                         <Button
@@ -86,12 +88,12 @@ function Home() {
                             >
                             {foodMenu.map((food, i) => (
                                 <MenuCard
-                                key={i}
-                                item={food.item}
-                                price={food.price}
-                                img={food.foodImage}
-                                description={food.description}
-                                />
+                                    key={i}
+                                    item={food.item}
+                                    price={food.price}
+                                    img={food.foodImage}
+                                    description={food.description}
+                                    />
                             ))}
                         </Grid>
                     </Flex>

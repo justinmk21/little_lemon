@@ -6,5 +6,21 @@ footer {
 }
 
 .footer table td {
-    padding: 10px 50px;color: aqua;
+    padding: 10px 50px;
+    color: aqua;
 }
+
+
+@media (max-width: 1630px) {
+    .footer {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 490px) {
+    .data-table-b {
+        display: none;
+    }
+}
+

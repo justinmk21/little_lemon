@@ -25,12 +25,15 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
     };
 
     return (
-        <form className="form" onSubmit={handleFormSubmit}>
+        <form
+            className="form"
+            onSubmit={handleFormSubmit}>
             <Flex
                 justifyContent={'space-between'}
                 alignItems={'center'}
                 gap={'2'}
                 >
+
                 <label htmlFor="seats">Seating:</label>
                 <Flex
                     alignItems={'center'}
@@ -115,6 +118,7 @@ function BookingForm({ dispatch, availableTimes, submitForm }) {
                 type="submit"
                 value="Make Your Reservations"
                 disabled={!date || !time || !guests || !occasion || !seats}
+                style={{marginTop: '30px'}}
             />
         </form>
     );
